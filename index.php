@@ -7,10 +7,10 @@ echo "The value of \$tar: ".$tar."<br>";
 
 $year = array("2012", "396", "300","2000", "1100", "1089");
 echo "The value of \$year: ";
-print_r($year."<br><br>");
+print_r($year);
 
 
-echo "2. ". $date = str_replace("-", "/", $date);	//2
+echo "<br>2. ". $date = str_replace("-", "/", $date);	//2
 echo "<br>";
 
 if($data > $tar ) {	//3
@@ -43,26 +43,25 @@ echo "7. ". ord($date[0]). "<br>";	//7
 
 echo "8. ". substr($date, -2). "<br>";	//8
 
-print_r(explode("/", $date));	//9
+echo "9. "; print_r(explode("/", $date));	//9
 echo "<br>";
 
-foreach( $year as $k => $v) {
-	switch($v % 4 == 0 and $v % 100 !=0 or $v % 400 == 0) {
-		case 0:
-			echo $v . " is False<br>";
-			break;
-		case 1:
-			echo $v . " is True<br>";
-			break;
+
+echo "10. "; foreach( $year as $k => $v) {	//10
+	swt($v);
+}
+echo "<br>10. ";
+for($i=0; $i< count($year); $i++){
+	swt($year[$i]);
+}
+function swt($v){
+switch($v % 4 == 0 and $v % 100 !=0 or $v % 400 == 0) {
+	case 0:
+		echo $v . " False ";	
+		break;
+	case 1:
+		echo $v . " True ";
+		break;
 	}
 }
-
-var_dump(strpos("wawaw","w",5));
-echo $data(0);
-var_dump($date );
-
-
-
-
-
 ?>
