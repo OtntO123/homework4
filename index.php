@@ -7,6 +7,62 @@ echo "The value of \$tar: ".$tar."<br>";
 
 $year = array("2012", "396", "300","2000", "1100", "1089");
 echo "The value of \$year: ";
-print_r($year)
+print_r($year."<br><br>");
+
+
+echo "2. ". $date = str_replace("-", "/", $date);	//2
+echo "<br>";
+
+if($data > $tar ) {	//3
+echo "the future<br>";
+} else{
+echo "3. Oops<br>";
+}
+
+$l=1; $cont=array();	//4
+echo "4. Pos ";
+while($c = strpos($date, "/", $l)){
+	echo $c . " ";
+	$l = $c + 1;
+	array_push($cont, $c);
+	}
+echo " contain '/'. ";
+if(count($cont) > 1){
+	echo " / is more than 1 position. Res: ";
+	for($i=0; $i < count($cont); $i++){
+	$date = substr($date, 0, $cont[$i] + $i). " ". substr($date, $cont[$i]+$i);   //substr_replace($date, " " , $cont[$i], strlen($cont[$i]));
+	}
+}
+echo $date . "<br>";
+
+echo "5. " . str_word_count($date). "<br>";	//5
+
+echo "6. ". strlen($date)."<br>";	//6
+
+echo "7. ". ord($date[0]). "<br>";	//7
+
+echo "8. ". substr($date, -2). "<br>";	//8
+
+print_r(explode("/", $date));	//9
+echo "<br>";
+
+foreach( $year as $k => $v) {
+	switch($v % 4 == 0 and $v % 100 !=0 or $v % 400 == 0) {
+		case 0:
+			echo $v . " is False<br>";
+			break;
+		case 1:
+			echo $v . " is True<br>";
+			break;
+	}
+}
+
+var_dump(strpos("wawaw","w",5));
+echo $data(0);
+var_dump($date );
+
+
+
+
 
 ?>
