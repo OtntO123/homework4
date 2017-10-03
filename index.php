@@ -13,10 +13,12 @@ print_r($year);
 echo "<br>2. ". $date = str_replace("-", "/", $date);	//2
 echo "<br>";
 
-if($data > $tar ) {	//3
-echo "the future<br>";
-} else{
+if(strcmp($data, $tar)) {	//3
+echo "3. the future<br>";
+} else if(strcmp($date, $tar)){
 echo "3. Oops<br>";
+} else if(strcmp($date, $tar)){
+echo "3. the past<br>";
 }
 
 $l=1; $cont=array();	//4
@@ -37,7 +39,7 @@ echo $date . "<br>";
 
 echo "5. " . str_word_count($date). "<br>";	//5
 
-echo "6. ". strlen($date)."<br>";	//6
+echo '6. $data\'s length is '. strlen($date)."<br>";	//6
 
 echo "7. ". ord($date[0]). "<br>";	//7
 
